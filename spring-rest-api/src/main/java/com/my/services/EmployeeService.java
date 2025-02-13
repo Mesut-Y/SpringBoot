@@ -1,0 +1,23 @@
+package com.my.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.my.model.Employee;
+import com.my.repository.EmployeeRepository;
+
+@Service
+public class EmployeeService {
+	
+	@Autowired
+	private EmployeeRepository employeeRepository; //@Autowired bean ulaşmasını sağlar. Olmazsa nullpointer.
+	
+	public List<Employee> getAllEmployeeList(){
+		
+		// kontroller yapıldıktan sonra repoya istek atılır.
+		employeeRepository.getAllEmployeeList();
+		return null;
+	}
+}
