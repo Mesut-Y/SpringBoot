@@ -10,13 +10,17 @@ import com.my.repository.EmployeeRepository;
 
 @Service
 public class EmployeeService {
-	
+
 	@Autowired
-	private EmployeeRepository employeeRepository; //@Autowired bean ulaşmasını sağlar. Olmazsa nullpointer.
-	
-	public List<Employee> getAllEmployeeList(){
-		
+	private EmployeeRepository employeeRepository; // @Autowired bean ulaşmasını sağlar. Olmazsa nullpointer.
+
+	public List<Employee> getAllEmployeeList() {
+
 		// kontroller yapıldıktan sonra repoya istek atılır.
 		return employeeRepository.getAllEmployeeList();
+	}
+
+	public Employee getEmployeeById(String id) {
+		return employeeRepository.getEmployeeById(id);
 	}
 }
