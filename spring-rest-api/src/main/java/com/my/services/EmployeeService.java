@@ -17,7 +17,6 @@ public class EmployeeService {
 	public List<Employee> getAllEmployeeList(){
 		
 		// kontroller yapıldıktan sonra repoya istek atılır.
-		employeeRepository.getAllEmployeeList();
-		return null;
+		return employeeRepository.getAllEmployeeList();
 	}
 }

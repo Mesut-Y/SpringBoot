@@ -15,11 +15,10 @@ import com.my.services.EmployeeService;
 public class RestEmployeeController {
 	
 	@Autowired  
-	private EmployeeService employeeService;
+	private EmployeeService employeeService;  //@Autowired bean ulaşmasını sağlar. Olmazsa nullpointer.
 	
 	@GetMapping(path = "/employee-list")  //get isteği urlsi belirlendi. Bu url için getAllEmployeeList çalışacak.
 	public List<Employee> getAllEmployeeList(){
-		employeeService.getAllEmployeeList();
-		return null;
+		return employeeService.getAllEmployeeList();
 	}
 }
