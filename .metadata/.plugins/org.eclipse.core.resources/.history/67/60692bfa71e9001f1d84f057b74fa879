@@ -1,0 +1,12 @@
+package com.mesuty.main;
+
+import com.mesuty.services.UserService;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		UserService userCervice1 = new UserService();
+	}
+
+}

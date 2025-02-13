@@ -1,0 +1,5 @@
+package com.mesuty.services;
+
+public class LoginService {
+
+}

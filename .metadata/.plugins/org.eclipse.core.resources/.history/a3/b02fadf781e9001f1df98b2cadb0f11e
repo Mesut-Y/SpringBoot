@@ -1,0 +1,21 @@
+package com.mesuty.main;
+
+import java.awt.image.renderable.ContextualRenderedImageFactory;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.catalina.core.ApplicationContext;
+
+import com.mesuty.config.AppConfig;
+import com.mesuty.model.User;
+import com.mesuty.services.UserService;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ApplicationContext = new AnnotationconfigApplicationContext(AppConfig.class);
+	}
+
+}

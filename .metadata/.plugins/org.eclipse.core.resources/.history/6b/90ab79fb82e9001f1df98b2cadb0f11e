@@ -1,0 +1,7 @@
+package com.mesuty.services;
+
+public class LoginService {
+	public void login() {
+		//User listesine ihtiyaç var. maindeki gibi bean çekilir.
+	}
+}

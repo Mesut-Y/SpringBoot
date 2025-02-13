@@ -1,0 +1,19 @@
+package com.mesuty.main;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.mesuty.config.AppConfig;
+import com.mesuty.services.UserService;
+
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+		context.getBean(UserService.class);
+	}
+
+}
