@@ -33,7 +33,6 @@ public class RestEmployeeController {
 	@GetMapping(path = "with-params")
 	public List<Employee> getEmployeeWithParams(@RequestParam(name = "firstName") String firstName, //firstName urldeki ile aynı olmalı
 												@RequestParam(name = "lastName", required = false) String lastName){ //required-zorunluluk= false default true
-		System.out.println(firstName + " " + lastName);
-		return null;
+		return employeeService.getEmployeeWithParams(firstName, lastName);
 	}
 }
