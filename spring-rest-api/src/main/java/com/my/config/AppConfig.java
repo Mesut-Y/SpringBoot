@@ -19,7 +19,14 @@ public class AppConfig {
 		employeeList.add(new Employee("3", "Toprak", "L"));
 		employeeList.add(new Employee("4", "Güneş", "G"));
 		employeeList.add(new Employee("5", "Doğa", "D"));
-
+		employeeList.add(new Employee("6", "Su", "D"));
+		employeeList.add(new Employee("7", "Doğa", "A"));
+		employeeList.add(new Employee("8", "Beril", "B"));
+		employeeList.add(new Employee("9", "Sunay", "D"));
+		employeeList.add(new Employee("10", "Sunay", "D"));
+		employeeList.add(new Employee("11", "Kemal", "S"));
+		employeeList.add(new Employee("12", "Barış", "M"));
+		employeeList.add(new Employee("13", "Cem", "K"));
 		return employeeList;
 	}
 }
