@@ -7,12 +7,14 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.my.model.Employee;
+import com.my.model.UpdateEmployeeRequest;
 import com.my.services.EmployeeService;
 
 @RestController
@@ -48,4 +50,11 @@ public class RestEmployeeController {
 	public boolean deleteEmployee(@PathVariable(name="id") String id) {
 		return employeeService.deleteEmploye(id);
 	}
+	
+	@PutMapping(path = "/update-employee/{id}")
+	public Employee updateEmployee(@PathVariable(name = "id") String id, @RequestBody UpdateEmployeeRequest request) {
+		
+		return null;
+	}
+
 }
