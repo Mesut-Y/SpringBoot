@@ -3,6 +3,7 @@ package com.my.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,7 +41,11 @@ public class RestEmployeeController {
 	
 	@PostMapping(path="/save-employee")  //Link ile sunucu veritabanına ekleme yapılır.
 	public Employee saveEmployee(@RequestBody Employee newEmployee) {
-		System.out.println(newEmployee); //çalışırsa yeni nesnenin hash kodunu yazar
-		return null;
+		return employeeService.saveEmployee(newEmployee);
+	}
+	
+	@DeleteMapping(path="/delete-employee/{id}")
+	public boolean deleteEmployee(@PathVariable(name="id") String id) {
+		return employeeService.deleteEmploye(id);
 	}
 }

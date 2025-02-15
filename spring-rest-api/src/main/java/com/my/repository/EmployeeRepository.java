@@ -54,4 +54,26 @@ public class EmployeeRepository {
 		}
 		return employeeWithParams;
 	}
+	public EmployeeRepository() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Employee saveEmployee(Employee newEmployee) {
+		employeeList.add(newEmployee);
+		return newEmployee;
+	}
+	
+	public boolean deleteEmployee(String id) {
+		Employee findEmployee = null;
+		for (Employee employe:employeeList) {
+			if (employe.getId().equalsIgnoreCase(id)) {
+				findEmployee = employe;
+			}
+		}
+		if(findEmployee != null) {
+			employeeList.remove(findEmployee);
+			return true;
+		}
+		return false;
+	}
 }
