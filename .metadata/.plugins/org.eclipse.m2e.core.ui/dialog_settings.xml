@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\Derslerim\SpringBoot\spring-rest-api"/>
 			<item value="D:\Derslerim\SpringBoot\2-spring-core"/>
 			<item value="D:\Derslerim\SpringBoot\1-SpringProjesi"/>
 		</list>
