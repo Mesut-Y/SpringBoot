@@ -53,8 +53,7 @@ public class RestEmployeeController {
 	
 	@PutMapping(path = "/update-employee/{id}")
 	public Employee updateEmployee(@PathVariable(name = "id") String id, @RequestBody UpdateEmployeeRequest request) {
-		
-		return null;
+		return employeeService.updateeEmployee(id, request);
 	}
 
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.my.model.Employee;
+import com.my.model.UpdateEmployeeRequest;
 
 @Repository
 public class EmployeeRepository {
@@ -75,5 +76,32 @@ public class EmployeeRepository {
 			return true;
 		}
 		return false;
+	}
+	
+	private Employee findEmployeeById(String id) {
+		Employee foundEmployee = null;
+		for (Employee employee: employeeList) {
+			if (employee.getId().equals(id)) {
+				foundEmployee = employee;
+				break;
+			}
+		}
+		return foundEmployee;
+	}
+	
+	
+	public Employee updateEmployee(String id, UpdateEmployeeRequest request) {
+		Employee foundEmployee = findEmployeeById(id);
+		if (foundEmployee != null) {
+			deleteEmployee(id);
+			
+			
+			/*foundEmployee.setId(id);  versiyon 2
+			foundEmployee.setFirstName(request.getFirstName());
+			foundEmployee.setLastName(request.getLastName());
+			employeeList.add(foundEmployee);*/
+			return foundEmployee;
+		}
+		return null;
 	}
 }
