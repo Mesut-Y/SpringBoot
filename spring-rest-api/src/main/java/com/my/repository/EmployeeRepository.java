@@ -95,12 +95,18 @@ public class EmployeeRepository {
 		if (foundEmployee != null) {
 			deleteEmployee(id);
 			
+			Employee updatedEmployee = new Employee(); //version 1
+			updatedEmployee.setId(id);  
+			updatedEmployee.setFirstName(request.getFirstName());
+			updatedEmployee.setLastName(request.getLastName());
+			employeeList.add(updatedEmployee);
+			return updatedEmployee; 
 			
-			/*foundEmployee.setId(id);  versiyon 2
+			/*foundEmployee.setId(id);  //version 2
 			foundEmployee.setFirstName(request.getFirstName());
 			foundEmployee.setLastName(request.getLastName());
-			employeeList.add(foundEmployee);*/
-			return foundEmployee;
+			employeeList.add(foundEmployee);
+			return foundEmployee; */
 		}
 		return null;
 	}
