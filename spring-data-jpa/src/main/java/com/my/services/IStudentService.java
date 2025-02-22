@@ -1,5 +1,8 @@
 package com.my.services;
 
-public interface IStudentService {
+import com.my.entities.Student;
 
+public interface IStudentService {
+	
+	public Student saveStudent(Student student);
 }

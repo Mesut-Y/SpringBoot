@@ -1,5 +1,8 @@
 package com.my.controller;
 
-public interface IStudentController {
+import com.my.entities.Student;
 
+public interface IStudentController {
+	
+	public Student saveStudent(Student student);
 }
