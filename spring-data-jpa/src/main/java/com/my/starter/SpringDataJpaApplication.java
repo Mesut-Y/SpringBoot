@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-@EntityScan(basePackages = "com.my")
+@EntityScan(basePackages = "com.my") //Tüm projedeki entity araştırması yapılır.
 @SpringBootApplication
 public class SpringDataJpaApplication {
 
