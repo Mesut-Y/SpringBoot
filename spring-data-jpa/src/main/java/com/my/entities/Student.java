@@ -1,5 +1,10 @@
 package com.my.entities;
 
+import java.util.Locale.IsoCountryCode;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
@@ -29,7 +34,8 @@ public class Student {
 	@Column(name="last_name",nullable = false)
 	private String lastName;
 	
-	@JsonFormat(pattern = "yyy-MM-dd")
+	//@JsonFormat(pattern = "yyy-MM-dd")
+	@DateTimeFormat(iso = ISO.DATE_TIME)
 	@Column(name="birth_of_date",nullable = true)
 	private String birthOfDate;
 
