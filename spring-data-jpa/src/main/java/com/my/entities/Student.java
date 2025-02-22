@@ -1,6 +1,4 @@
-package entities;
-
-import java.sql.Date;
+package com.my.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,23 +11,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "student")
+@Table(name="student")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Student {
 	
 	@Id
-	@Column(name ="id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	
-	@Column(name="first_name", nullable = false, length = 50)
+	@Column(name="first_name",nullable = false, length = 50)
 	private String firstName;
 	
-	@Column(name="last_name")
+	@Column(name="last_name",nullable = false)
 	private String lastName;
 	
-	@Column(name = "birth_of_date")
-	private Date birthOfDate;
+	@Column(name="birth_of_date",nullable = true)
+	private String birthOfDate;
+
 }

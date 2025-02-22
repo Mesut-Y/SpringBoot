@@ -1,7 +1,0 @@
-package com.mesuty.services;
-
-import java.util.List;
-
-public class UserService {
-	private List<User> userList;
-}

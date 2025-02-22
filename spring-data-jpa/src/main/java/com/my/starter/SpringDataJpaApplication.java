@@ -1,8 +1,10 @@
-package com.my.spring_data_jpa;
+package com.my.starter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+@EntityScan(basePackages = "com.my")
 @SpringBootApplication
 public class SpringDataJpaApplication {
 
