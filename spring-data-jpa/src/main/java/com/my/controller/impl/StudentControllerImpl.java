@@ -1,5 +1,7 @@
 package com.my.controller.impl;
 
-public class StudentControllerImpl {
+import com.my.controller.IStudentController;
+
+public class StudentControllerImpl implements IStudentController{
 
 }
