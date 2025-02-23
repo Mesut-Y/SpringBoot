@@ -47,5 +47,11 @@ public class StudentServiceImpl implements IStudentService{
 			System.out.println("Servis mesajı kayıt bulunamadı.");
 		}
 	}
+	
+	@Override
+	public Student updateStudent(Integer id, Student updatedStudent)
+	{
+		return null;
+	}
 
 }
