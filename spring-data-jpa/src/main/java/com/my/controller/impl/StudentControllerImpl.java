@@ -3,6 +3,7 @@ package com.my.controller.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,6 +41,13 @@ public class StudentControllerImpl implements IStudentController{
 	public Student getStudentById(@PathVariable(name = "id") Integer id)
 	{
 		return studentService.getStudentById(id);
+	}
+	
+	@DeleteMapping(path = "/delete/{id}")
+	@Override
+	public void deleteStudent(@PathVariable(name="id") Integer id)
+	{
+		studentService.deleteStudent(id);
 	}
 	
 }
