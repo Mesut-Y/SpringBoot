@@ -55,8 +55,7 @@ public class StudentControllerImpl implements IStudentController{
 	@Override
 	public Student updateStudent(@PathVariable(name="id") Integer id,@RequestBody Student updatedStudent)
 	{
-		studentService.updateStudent(id, updatedStudent);
-		return null;
+		return studentService.updateStudent(id, updatedStudent);
 	}
 	
 }

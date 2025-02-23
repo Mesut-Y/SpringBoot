@@ -51,6 +51,16 @@ public class StudentServiceImpl implements IStudentService{
 	@Override
 	public Student updateStudent(Integer id, Student updatedStudent)
 	{
+		Student dbStudent = getStudentById(id);
+		if (dbStudent != null)
+		{
+			dbStudent.setFirstName(updatedStudent.getFirstName());
+			dbStudent.setLastName(updatedStudent.getLastName());
+			dbStudent.setBirthOfDate(updatedStudent.getBirthOfDate());
+			dbStudent.setId(id);
+			studentRepository.save(dbStudent);
+			return dbStudent;
+		}
 		return null;
 	}
 
