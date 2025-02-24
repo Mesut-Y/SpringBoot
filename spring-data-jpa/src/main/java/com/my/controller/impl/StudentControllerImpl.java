@@ -36,7 +36,7 @@ public class StudentControllerImpl implements IStudentController{
 
 	@GetMapping(path="/list")
 	@Override
-	public List<Student> getAllStudents() {
+	public List<DtoStudent> getAllStudents() {
 		return studentService.getAllStudents();
 	}
 	

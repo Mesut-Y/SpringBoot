@@ -10,7 +10,7 @@ public interface IStudentService {
 	
 	public DtoStudent saveStudent(DtoStudentIU student);
 	
-	public List<Student> getAllStudents();
+	public List<DtoStudent> getAllStudents();
 	
 	public Student getStudentById(Integer id);
 	

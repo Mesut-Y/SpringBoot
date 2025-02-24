@@ -1,5 +1,6 @@
 package com.my.services.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,9 +32,16 @@ public class StudentServiceImpl implements IStudentService{
 	}
 
 	@Override
-	public List<Student> getAllStudents() {
-		return studentRepository.findAll();
-		
+	public List<DtoStudent> getAllStudents() {
+		List<DtoStudent> dtoList = new ArrayList<>();
+		List<Student> studentList = studentRepository.findAll();
+		for (Student student : studentList)
+		{
+			DtoStudent dto = new DtoStudent();
+			BeanUtils.copyProperties(student, dto);
+			dtoList.add(dto);
+		}
+		return dtoList;
 	}
 
 	@Override
