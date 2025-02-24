@@ -3,9 +3,12 @@ package com.my.services.impl;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.my.dto.DtoStudent;
+import com.my.dto.DtoStudentIU;
 import com.my.entities.Student;
 import com.my.repository.StudentRepository;
 import com.my.services.IStudentService;
@@ -17,8 +20,14 @@ public class StudentServiceImpl implements IStudentService{
 	private StudentRepository studentRepository;
 	
 	@Override
-	public Student saveStudent(Student student) {
-		return studentRepository.save(student);
+	public DtoStudent saveStudent(DtoStudentIU dtoStudentIU) {
+		DtoStudent response = new DtoStudent();
+		Student student= new Student();
+		BeanUtils.copyProperties(dtoStudentIU, student);
+		Student dbStudent = studentRepository.save(student);
+
+		BeanUtils.copyProperties(dbStudent,response);
+		return response;
 	}
 
 	@Override

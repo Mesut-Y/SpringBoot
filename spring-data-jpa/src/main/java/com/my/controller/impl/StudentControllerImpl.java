@@ -2,6 +2,7 @@ package com.my.controller.impl;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.my.controller.IStudentController;
+import com.my.dto.DtoStudentIU;
 import com.my.entities.Student;
 import com.my.services.IStudentService;
+import com.my.dto.DtoStudent;
 
 @RestController
 @RequestMapping("/rest/api/student")
@@ -26,9 +29,9 @@ public class StudentControllerImpl implements IStudentController{
 	//DTO eklenecek.
 	@PostMapping(path="/save")
 	@Override
-	public Student saveStudent(@RequestBody Student student) {
+	public DtoStudent saveStudent(@RequestBody DtoStudentIU dtoStudentIU) {
 		//TODO
-		return studentService.saveStudent(student);
+		return studentService.saveStudent(dtoStudentIU);
 	}
 
 	@GetMapping(path="/list")

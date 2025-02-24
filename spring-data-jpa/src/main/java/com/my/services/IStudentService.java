@@ -2,11 +2,13 @@ package com.my.services;
 
 import java.util.List;
 
+import com.my.dto.DtoStudentIU;
+import com.my.dto.DtoStudent;
 import com.my.entities.Student;
 
 public interface IStudentService {
 	
-	public Student saveStudent(Student student);
+	public DtoStudent saveStudent(DtoStudentIU student);
 	
 	public List<Student> getAllStudents();
 	

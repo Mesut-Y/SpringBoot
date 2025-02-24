@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DtoStudent {
+public class DtoStudent {  //get işlemleri
 	private String firstName;
 	private String lastName;
 }

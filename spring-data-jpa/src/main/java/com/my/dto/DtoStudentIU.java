@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DtoStudentIU {
+public class DtoStudentIU { //Insert ve Update işlemleri
 	private String firstName;
 	private String lastName;
 	private String birthOfDate;
