@@ -12,7 +12,7 @@ public interface IStudentController {
 	
 	public List<DtoStudent> getAllStudents();
 	
-	public Student getStudentById(Integer id);
+	public DtoStudent getStudentById(Integer id);
 	
 	public void deleteStudent(Integer id);
 	

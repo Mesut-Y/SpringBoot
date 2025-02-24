@@ -45,11 +45,13 @@ public class StudentServiceImpl implements IStudentService{
 	}
 
 	@Override
-	public Student getStudentById(Integer id) {
+	public DtoStudent getStudentById(Integer id) {
 		Optional<Student> opt = studentRepository.findById(id);
+		DtoStudent dtoStudent = new DtoStudent();
 		if (opt.isPresent()) //  !opt.isEmpty()
 		{
-			return opt.get();
+			BeanUtils.copyProperties(opt.get(), dtoStudent);
+			return dtoStudent;
 		}
 		return null;
 	}
@@ -57,27 +59,27 @@ public class StudentServiceImpl implements IStudentService{
 	@Override
 	public void deleteStudent(Integer id)
 	{
-		Student dbStudent = getStudentById(id);
-		if (dbStudent!=null)
-			studentRepository.delete(dbStudent);
-		else {
-			System.out.println("Servis mesajı kayıt bulunamadı.");
-		}
+//		Student dbStudent = getStudentById(id);
+//		if (dbStudent != null)
+//			studentRepository.delete(dbStudent);
+//		else {
+//			System.out.println("Servis mesajı kayıt bulunamadı.");
+//		}
 	}
 	
 	@Override
 	public Student updateStudent(Integer id, Student updatedStudent)
 	{
-		Student dbStudent = getStudentById(id);
-		if (dbStudent != null)
-		{
-			dbStudent.setFirstName(updatedStudent.getFirstName());
-			dbStudent.setLastName(updatedStudent.getLastName());
-			dbStudent.setBirthOfDate(updatedStudent.getBirthOfDate());
-			dbStudent.setId(id);
-			studentRepository.save(dbStudent);
-			return dbStudent;
-		}
+//		Student dbStudent = getStudentById(id);
+//		if (dbStudent != null)
+//		{
+//			dbStudent.setFirstName(updatedStudent.getFirstName());
+//			dbStudent.setLastName(updatedStudent.getLastName());
+//			dbStudent.setBirthOfDate(updatedStudent.getBirthOfDate());
+//			dbStudent.setId(id);
+//			studentRepository.save(dbStudent);
+//			return dbStudent;
+//		}
 		return null;
 	}
 
