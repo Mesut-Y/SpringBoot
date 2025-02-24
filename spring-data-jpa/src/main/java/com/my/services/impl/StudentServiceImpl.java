@@ -35,6 +35,8 @@ public class StudentServiceImpl implements IStudentService{
 	public List<DtoStudent> getAllStudents() {
 		List<DtoStudent> dtoList = new ArrayList<>();
 		List<Student> studentList = studentRepository.findAll();
+		//List<Student> studentList = studentRepository.getAllStudentsWithHql(); //for Query annotation with HQL 
+		//List<Student> studentList = studentRepository.getAllStudentsWithSql(); //for Query annotation with SQL 
 		for (Student student : studentList)
 		{
 			DtoStudent dto = new DtoStudent();
@@ -47,6 +49,7 @@ public class StudentServiceImpl implements IStudentService{
 	@Override
 	public DtoStudent getStudentById(Integer id) {
 		Optional<Student> opt = studentRepository.findById(id);
+		//Optional<Student> opt = studentRepository.findStudentById(id); //for Query annotation HQL with WHERE
 		DtoStudent dtoStudent = new DtoStudent();
 		if (opt.isPresent()) //  !opt.isEmpty()
 		{

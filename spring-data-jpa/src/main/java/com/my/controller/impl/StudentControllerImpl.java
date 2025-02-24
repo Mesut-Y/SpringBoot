@@ -31,7 +31,7 @@ public class StudentControllerImpl implements IStudentController{
 	@Override
 	public DtoStudent saveStudent(@RequestBody DtoStudentIU dtoStudentIU) {
 		//TODO
-		return studentService.saveStudent(dtoStudentIU);
+		return studentService.saveStudent(dtoStudentIU); //DtoStudent dönüyor.
 	}
 
 	@GetMapping(path="/list")
