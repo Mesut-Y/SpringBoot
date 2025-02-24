@@ -59,12 +59,14 @@ public class StudentServiceImpl implements IStudentService{
 	@Override
 	public void deleteStudent(Integer id)
 	{
-//		Student dbStudent = getStudentById(id);
-//		if (dbStudent != null)
-//			studentRepository.delete(dbStudent);
-//		else {
-//			System.out.println("Servis mesajı kayıt bulunamadı.");
-//		}
+		Optional<Student> opt = studentRepository.findById(id);
+		if (opt.get() != null)
+		{
+			studentRepository.delete(opt.get());
+		}
+		else {
+			System.out.println("Servis mesajı kayıt bulunamadı.");
+		}
 	}
 	
 	@Override
