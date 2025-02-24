@@ -17,6 +17,9 @@ import com.my.controller.IStudentController;
 import com.my.dto.DtoStudentIU;
 import com.my.entities.Student;
 import com.my.services.IStudentService;
+
+import jakarta.validation.Valid;
+
 import com.my.dto.DtoStudent;
 
 @RestController
@@ -29,7 +32,7 @@ public class StudentControllerImpl implements IStudentController{
 	//DTO eklenecek.
 	@PostMapping(path="/save")
 	@Override
-	public DtoStudent saveStudent(@RequestBody DtoStudentIU dtoStudentIU) {
+	public DtoStudent saveStudent(@RequestBody @Valid DtoStudentIU dtoStudentIU) {
 		//TODO
 		return studentService.saveStudent(dtoStudentIU); //DtoStudent dönüyor.
 	}
