@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="java.lang.Class">
-		<item key="selection" value="foundEmployee.setId(id);"/>
+		<item key="selection" value="&#x09;&#x09;Student dbStudent = getStudentById(id);"/>
 		<list key="findhistory">
+			<item value="&#x09;&#x09;Student dbStudent = getStudentById(id);"/>
 			<item value="foundEmployee.setId(id);"/>
 			<item value=""/>
 		</list>
