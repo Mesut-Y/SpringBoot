@@ -38,5 +38,11 @@ public class Student {
 	@DateTimeFormat(iso = ISO.DATE_TIME)
 	@Column(name="birth_of_date",nullable = true)
 	private String birthOfDate;
+	
+	@Column(name = "email")
+	private String email;
+	
+	@Column(name = "tc_kimlik_no")
+	private String tckno;
 
 }

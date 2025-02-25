@@ -20,11 +20,12 @@ public class DtoStudentIU { //Insert ve Update işlemleri
 	
 	@Size(min = 3, max = 20, message = "Girdiğiniz değer en az 3 ve en fazla 20 karakter olmalıdır.")
 	private String lastName;
+	
 	private String birthOfDate;
 	
 	@Email(message = "Email formatında bir adres giriniz.")
 	private String email;
 	
 	@Size(min = 11, max = 11, message = "TC Kimlik bilgisini 11 hane giriniz.")
-	private String tckn;
+	private String tckno;
 }
