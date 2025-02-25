@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ApiError {  //exception formatı belirlendi.
+public class ApiError<T> {  //exception formatı belirlendi.
 	private String id;
 	private Date errorTime;
-	private Map<String, List<String>> errors;
+	private T errors;  // farklı hata mesajları formatı için generic kullanıldı.
 }
