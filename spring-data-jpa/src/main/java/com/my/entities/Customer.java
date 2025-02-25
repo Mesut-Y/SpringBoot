@@ -26,5 +26,5 @@ public class Customer {
 	private String name;
 	
 	@OneToOne
-	private Adress adress;
+	private Address address;
 }

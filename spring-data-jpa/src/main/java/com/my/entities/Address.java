@@ -16,8 +16,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "adress")
-public class Adress {
+@Table(name = "address")
+public class Address {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +26,7 @@ public class Adress {
 	@Column(name = "description")
 	private String description;
 	
-	@OneToOne(mappedBy = "adress")
+	@OneToOne(mappedBy = "address")
 	private Customer customer;
 	
 }
