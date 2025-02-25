@@ -14,9 +14,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class DtoStudentIU { //Insert ve Update işlemleri
 	
-	@NotEmpty(message = "Lütfen isim giriniz.")
-	@Min(value = 3 ,message = "Girdiğiniz değer en az 3 karakter olmalıdır.") 
-	@Max(value = 20, message = "Girdiğiniz değer en fazla 20 karakter olmalıdır.")
+	@NotEmpty(message = "Lütfen isim giriniz.") //@Max ve @Min sayısal değer için
+	@Size(min = 3, max = 20, message = "Girdiğiniz değer en az 3 ve en fazla 20 karakter olmalıdır.")
 	private String firstName;
 	
 	@Size(min = 3, max = 20, message = "Girdiğiniz değer en az 3 ve en fazla 20 karakter olmalıdır.")

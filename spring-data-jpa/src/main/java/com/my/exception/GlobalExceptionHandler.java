@@ -34,7 +34,6 @@ public class GlobalExceptionHandler {
 				errorsMap.put(fieldName, addMapValue(errorsMap.get(fieldName), objError.getDefaultMessage()));
 			else 
 				errorsMap.put(fieldName, addMapValue(new ArrayList<>(), objError.getDefaultMessage()));
-				
 		}
 		return ResponseEntity.badRequest().body(createApiError(errorsMap)); 
 	}

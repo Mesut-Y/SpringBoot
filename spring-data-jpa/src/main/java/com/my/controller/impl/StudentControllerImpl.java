@@ -29,7 +29,7 @@ public class StudentControllerImpl implements IStudentController{
 	@Autowired
 	private IStudentService studentService;
 	
-	//DTO eklenecek.
+	
 	@PostMapping(path="/save")
 	@Override
 	public DtoStudent saveStudent(@RequestBody @Valid DtoStudentIU dtoStudentIU) {
