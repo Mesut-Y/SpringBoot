@@ -15,11 +15,11 @@ import lombok.NoArgsConstructor;
 public class DtoStudentIU { //Insert ve Update işlemleri
 	
 	@NotEmpty(message = "Lütfen isim giriniz.")
-	@Min(value = 3)
-	@Max(value = 20)
+	@Min(value = 3 ,message = "Girdiğiniz değer en az 3 karakter olmalıdır.") 
+	@Max(value = 20, message = "Girdiğiniz değer en fazla 20 karakter olmalıdır.")
 	private String firstName;
 	
-	@Size(min = 3, max = 20)
+	@Size(min = 3, max = 20, message = "Girdiğiniz değer en az 3 ve en fazla 20 karakter olmalıdır.")
 	private String lastName;
 	private String birthOfDate;
 	
