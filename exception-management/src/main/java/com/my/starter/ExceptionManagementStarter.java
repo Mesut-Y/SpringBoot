@@ -1,13 +1,13 @@
-package com.my.exception_management;
+package com.my.starter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ExceptionManagementApplication {
+public class ExceptionManagementStarter {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ExceptionManagementApplication.class, args);
+		SpringApplication.run(ExceptionManagementStarter.class, args);
 	}
 
 }
