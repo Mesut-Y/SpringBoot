@@ -1,5 +1,9 @@
 package com.my.dto;
 
+import java.util.List;
+
+import com.my.entities.Course;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -28,4 +32,6 @@ public class DtoStudentIU { //Insert ve Update işlemleri
 	
 	@Size(min = 11, max = 11, message = "TC Kimlik bilgisini 11 hane giriniz.")
 	private String tckno;
+	
+	private List<Course> courses;
 }
