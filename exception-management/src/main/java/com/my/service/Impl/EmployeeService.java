@@ -1,5 +1,6 @@
 package com.my.service.Impl;
 
+import java.sql.SQLInvalidAuthorizationSpecException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -13,6 +14,9 @@ import org.springframework.stereotype.Service;
 import com.my.dto.DtoDepartment;
 import com.my.dto.DtoEmployee;
 import com.my.entities.Employee;
+import com.my.exception.BaseException;
+import com.my.exception.ErrorMessage;
+import com.my.exception.MessageType;
 import com.my.repository.IEmployeeRepository;
 import com.my.service.IEmployeeService;
 
@@ -47,9 +51,9 @@ public class EmployeeService implements IEmployeeService{
 	public DtoEmployee getEmployeeById(Long id) {
 		Optional<Employee> opt = employeeRepository.findById(id);
 		DtoEmployee dtoEmployee = new DtoEmployee();
-		if (opt.isEmpty() && opt.get() != null)
+		if (opt.isEmpty() || opt.get() == null)
 		{
-			return null;
+			throw new BaseException(new ErrorMessage(MessageType.NO_RECORD_EXIST, id.toString()));
 		}
 		else {
 			BeanUtils.copyProperties(opt.get(), dtoEmployee);
