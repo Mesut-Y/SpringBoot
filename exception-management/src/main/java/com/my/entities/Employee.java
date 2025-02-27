@@ -29,7 +29,7 @@ public class Employee {
 	private String surname;
 	
 	@Column(name = "worked_year")
-	private String wordkedYear;
+	private int wordkedYear;
 	
 	@ManyToOne
 	private Department department;
