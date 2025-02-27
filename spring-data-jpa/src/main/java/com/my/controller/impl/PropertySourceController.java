@@ -5,6 +5,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.my.configuration.DataSource;
 import com.my.configuration.GlobalProperties;
+import com.my.configuration.GlobalPropertiesExtended;
+import com.my.configuration.Server;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +22,9 @@ public class PropertySourceController {
 	@Autowired
 	private GlobalProperties globalProperties;
 	
+	@Autowired
+	private GlobalPropertiesExtended globalPropertiesExtended;
+	
 	@GetMapping("/datasource")
 	public DataSource getDataSource() {
 		DataSource dataSource = new DataSource();
@@ -27,4 +34,8 @@ public class PropertySourceController {
 		return dataSource;
 	}
 	
+	@GetMapping("/getservers")
+	public List<Server> getServers(){
+		return globalPropertiesExtended.getServers();
+	}
 }
