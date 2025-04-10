@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.my.controller.IEmployeeController;
 import com.my.dto.DtoEmployee;
+import com.my.entities.RootEntitiy;
 import com.my.service.IEmployeeService;
 
 @RestController
 @RequestMapping("/rest/api/employee")
-public class EmployeeController implements IEmployeeController {
+public class RestEmployeeControllerImpl extends RestBaseController implements IEmployeeController {
 
 	@Autowired
 	private IEmployeeService employeeService;
@@ -28,8 +29,8 @@ public class EmployeeController implements IEmployeeController {
 	
 	@GetMapping("/list/{id}")
 	@Override
-	public DtoEmployee getEmployeeById(@PathVariable(value = "id") Long id)
+	public RootEntitiy<DtoEmployee> getEmployeeById(@PathVariable(value = "id") Long id)
 	{
-		return employeeService.getEmployeeById(id);
+		return ok(employeeService.getEmployeeById(id)) ;
 	}
 }
