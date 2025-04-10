@@ -21,7 +21,7 @@ import com.my.repository.IEmployeeRepository;
 import com.my.service.IEmployeeService;
 
 @Service
-public class EmployeeService implements IEmployeeService{
+public class EmployeeServiceImpl implements IEmployeeService{
 
 	@Autowired
 	private IEmployeeRepository employeeRepository;
