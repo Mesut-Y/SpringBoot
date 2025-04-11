@@ -10,7 +10,7 @@ public class ScheduledExample {
 
 	// "saniye dakika saat gün ay haftagünü"
 	//@Scheduled(cron = "0 31 16 * * *")
-	@Scheduled(cron = "*/5 * * * * *")
+	//@Scheduled(cron = "*/5 * * * * *")
 	public void write1To10() {
 		System.out.print(new Date()+ " ");
 		for(int i = 1; i<11; i++)
