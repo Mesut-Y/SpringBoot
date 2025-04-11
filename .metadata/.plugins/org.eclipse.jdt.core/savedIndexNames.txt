@@ -6,7 +6,6 @@ INDEX VERSION 1.134+D:\Derslerim\SpringBoot\.metadata\.plugins\org.eclipse.jdt.c
 3154683226.index
 3836832973.index
 2964077105.index
-168580721.index
 2746249345.index
 3413725848.index
 322786633.index
