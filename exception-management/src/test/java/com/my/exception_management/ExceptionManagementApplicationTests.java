@@ -1,6 +1,7 @@
 package com.my.exception_management;
 
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
 
@@ -21,6 +22,7 @@ class ExceptionManagementApplicationTests {
 	@Autowired
 	private IEmployeeService employeeService;
 	
+	
 	@Test
 	public void testGetEmployeeById() {
 		DtoEmployee dtoEmployee =  employeeService.getEmployeeById(3L);
@@ -28,6 +30,8 @@ class ExceptionManagementApplicationTests {
 			System.out.println("isim: " + dtoEmployee.getName());
 		}
 		assertNotNull(dtoEmployee);
+		assertEquals(4, 6); //failure   
+		//assertEquals(4L, dtoEmployee.getId());
 	}
 	
 	@Test
