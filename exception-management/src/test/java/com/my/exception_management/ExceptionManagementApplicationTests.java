@@ -8,6 +8,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,6 +24,10 @@ class ExceptionManagementApplicationTests {
 	@Autowired
 	private IEmployeeService employeeService;
 	
+	@BeforeEach
+	public void beforeEach() {
+		System.out.println("beforeEach çalıştı...");
+	}
 	
 	@Test
 	public void testGetEmployeeById() {
@@ -30,7 +36,7 @@ class ExceptionManagementApplicationTests {
 			System.out.println("isim: " + dtoEmployee.getName());
 		}
 		assertNotNull(dtoEmployee);
-		assertEquals(4, 6); //failure   
+		//assertEquals(4, 6); //failure   
 		//assertEquals(4L, dtoEmployee.getId());
 	}
 	
@@ -42,5 +48,10 @@ class ExceptionManagementApplicationTests {
 				System.out.println(dtoEmployee.getId()+" "+dtoEmployee.getName()+" "+dtoEmployee.getSurname()+" "+dtoEmployee.getDtoDepartment());
 			}
 		}
+	}
+	
+	@AfterEach
+	public void afterEach() {
+		System.out.println("afterEach çalıştı...");
 	}
 }
