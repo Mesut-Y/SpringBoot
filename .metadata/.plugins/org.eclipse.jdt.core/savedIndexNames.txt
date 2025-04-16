@@ -14,7 +14,6 @@ INDEX VERSION 1.134+D:\Derslerim\SpringBoot\.metadata\.plugins\org.eclipse.jdt.c
 321209077.index
 448392335.index
 1143001765.index
-1819291095.index
 1145043291.index
 2374718086.index
 2564164069.index
@@ -25,7 +24,6 @@ INDEX VERSION 1.134+D:\Derslerim\SpringBoot\.metadata\.plugins\org.eclipse.jdt.c
 1476442434.index
 797174036.index
 4109177477.index
-555932869.index
 2126450101.index
 2429446445.index
 1482212975.index

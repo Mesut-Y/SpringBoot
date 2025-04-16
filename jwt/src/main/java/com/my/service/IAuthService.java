@@ -1,5 +1,8 @@
 package com.my.service;
 
-public interface IAuthService {
+import com.my.dto.DtoUser;
 
+public interface IAuthService {
+	
+	public DtoUser register(DtoUser request);
 }
