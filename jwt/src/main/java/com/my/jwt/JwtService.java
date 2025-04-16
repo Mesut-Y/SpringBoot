@@ -16,28 +16,30 @@ import io.jsonwebtoken.security.Keys;
 
 @Component
 public class JwtService {
-	
+
 	private static final String SECRET_KEY = "VoUs4Gg25Q+XXKHOKYYQ4p3fdJi2BrDReiiuHq4HRhQ=";
 
 	public String generateToken(UserDetails userDetails) {
-		return Jwts.builder()
-		.setSubject(userDetails.getUsername())
-		.setIssuedAt(new Date())
-		.setExpiration(new Date(System.currentTimeMillis()+1000*60*60*2))
-		.signWith(getKey(), SignatureAlgorithm.HS256)
-		.compact();
+		return Jwts.builder().setSubject(userDetails.getUsername()).setIssuedAt(new Date())
+				.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 2))
+				.signWith(getKey(), SignatureAlgorithm.HS256).compact();
 	}
-	
-	public <T> T exportToken(String token, Function<Claims, T> claimsFunction){
-		Claims claims = Jwts
-		.parserBuilder()
-		.setSigningKey(getKey())
-		.build()
-		.parseClaimsJws(token).getBody();
-		
+
+	public <T> T exportToken(String token, Function<Claims, T> claimsFunction) {
+		Claims claims = Jwts.parserBuilder().setSigningKey(getKey()).build().parseClaimsJws(token).getBody();
+
 		return claimsFunction.apply(claims);
 	}
-	
+
+	public String getUsernameByToken(String token) {
+		return exportToken(token, Claims::getSubject);
+	}
+
+	public boolean isTokenExpired(String token) {
+		Date expiredDate = exportToken(token, Claims::getExpiration);
+		return new Date().before(expiredDate); // if current time is less than expiredDate True, else False
+	}
+
 	public Key getKey() {
 		byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
 		return Keys.hmacShaKeyFor(keyBytes);
