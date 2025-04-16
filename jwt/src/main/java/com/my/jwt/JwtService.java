@@ -28,7 +28,16 @@ public class JwtService {
 		.compact();
 	}
 	
-
+	public <T> T exportToken(String token, Function<Claims, T> claimsFunction){
+		Claims claims = Jwts
+		.parserBuilder()
+		.setSigningKey(getKey())
+		.build()
+		.parseClaimsJws(token).getBody();
+		
+		return claimsFunction.apply(claims);
+	}
+	
 	public Key getKey() {
 		byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
 		return Keys.hmacShaKeyFor(keyBytes);
