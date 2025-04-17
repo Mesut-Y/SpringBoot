@@ -24,11 +24,9 @@ public class AuthServiceImpl implements IAuthService {
 		user.setUsername(request.getUsername());
 		user.setPassword(request.getPassword());
 		User savedUser = userRepository.save(user);
-		
+
 		BeanUtils.copyProperties(savedUser, dtoUser);
 		return dtoUser;
 	}
-	
-	
 
 }

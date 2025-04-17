@@ -9,10 +9,9 @@ import org.springframework.stereotype.Repository;
 import com.my.model.User;
 import java.util.List;
 
-
 @Repository
-public interface UserRepository extends JpaRepository<User, Long>{
+public interface UserRepository extends JpaRepository<User, Long> {
 
-	//@Query(value = "from User where user_name = :username")
+	// @Query(value = "from User where user_name = :username")
 	Optional<User> findByUsername(String username);
 }
