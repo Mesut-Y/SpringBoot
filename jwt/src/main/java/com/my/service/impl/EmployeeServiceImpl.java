@@ -30,7 +30,8 @@ public class EmployeeServiceImpl implements IEmployeeService{
 		 DtoDepartment dto = new DtoDepartment();
 		 
 		 BeanUtils.copyProperties(opt.get(), dtoEmployee);
-		 BeanUtils.copyProperties(opt.get().getDepartment(), dtoEmployee.getDtoDepartment());
+		 BeanUtils.copyProperties(opt.get().getDepartment(), dto);
+		 dtoEmployee.setDtoDepartment(dto);
 		
 		return dtoEmployee;
 	}

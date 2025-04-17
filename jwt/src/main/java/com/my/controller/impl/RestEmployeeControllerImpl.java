@@ -22,7 +22,7 @@ public class RestEmployeeControllerImpl implements IRestEmployeeController{
 	
 	@Override
 	@GetMapping("/{id}")
-	public DtoEmployee findEmployeeById(@Valid @NotEmpty @PathVariable(value= "id") Long id) {
+	public DtoEmployee findEmployeeById(@PathVariable(value= "id") Long id) {
 		return employeeService.findEmployeeById(id);
 	}
 
