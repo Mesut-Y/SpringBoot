@@ -2,6 +2,7 @@ package com.my.service.impl;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.my.dto.DtoUser;
@@ -16,13 +17,16 @@ public class AuthServiceImpl implements IAuthService {
 
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
 
 	@Override
 	public DtoUser register(DtoUser request) {
 		DtoUser dtoUser = new DtoUser();
 		User user = new User();
 		user.setUsername(request.getUsername());
-		user.setPassword(request.getPassword());
+		user.setPassword(passwordEncoder.encode(request.getPassword()));
 		User savedUser = userRepository.save(user);
 
 		BeanUtils.copyProperties(savedUser, dtoUser);
